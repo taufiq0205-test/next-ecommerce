@@ -14,12 +14,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isEditorPage = pathname.startsWith('/editor');
+
   return (
     <html lang="en">      
       <body className={inter.className}>
-        {!usePathname().startsWith('/editor') && <Navbar />}
+        {!isEditorPage && <Navbar />}
         {children}
-        <Footer/>
+        {!isEditorPage && <Footer/>}
         </body>
     </html>
   );
