@@ -1,15 +1,13 @@
-import type { Metadata } from "next";
+"use client";
+
+
 import { Inter } from "next/font/google";
+import { usePathname } from "next/navigation";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "FE prototype",
-  description: "A complete e-commerce application with Next.js and Wix",
-};
 
 export default function RootLayout({
   children,
@@ -17,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en">      
       <body className={inter.className}>
-        <Navbar/>
+        {!usePathname().startsWith('/editor') && <Navbar />}
         {children}
         <Footer/>
         </body>

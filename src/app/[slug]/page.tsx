@@ -1,15 +1,13 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 
 const SinglePage = () => {
   const [quantity, setQuantity] = useState(100)
   const [paperMaterial, setPaperMaterial] = useState("260gsm Art Card")
   const [finishing, setFinishing] = useState("1 Side Hot Stamping")
-  const [stampingColor, setStampingColor] = useState("Gold")
-  const [lamination, setLamination] = useState("Non Lamination")
-  const [roundCorner, setRoundCorner] = useState("No")
 
   return (
     <div className='px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative flex flex-col gap-8 py-8'>
@@ -167,8 +165,8 @@ const SinglePage = () => {
             <div className="flex justify-between items-center">
               <div className="flex flex-col">
                 <span className="text-sm text-gray-500">Total:</span>
-                <span className="text-2xl font-bold text-red-500">RM38.00</span>
-                <span className="text-xs text-gray-500">Unit Price: RM0.38</span>
+                <span className="text-2xl font-bold text-red-500">RM0.00</span>
+                <span className="text-xs text-gray-500">Unit Price: RM0.00</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex items-center gap-1">
@@ -178,13 +176,13 @@ const SinglePage = () => {
               </div>
             </div>
             
-            {/* Upload Design Button */}
-            <div className="mt-4 bg-red-100 rounded-full p-4 flex items-center justify-center gap-2 cursor-pointer hover:bg-red-200 transition-colors">
+            {/* Add to Cart Button */}
+            <Link href="/editor" className="mt-4 bg-red-100 rounded-full p-4 flex items-center justify-center gap-2 cursor-pointer hover:bg-red-200 transition-colors">
               <div className="text-red-500"></div>
               <div>
                 <h3 className="font-medium text-red-500">Add to Cart</h3>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </div>
