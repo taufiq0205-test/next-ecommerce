@@ -57,3 +57,6 @@ const BottomBar = ({ spreads, activeSpread, onSelectSpread, onAddSpread }: Botto
 }
 
 export default BottomBar;
+
+
+//firebase test
